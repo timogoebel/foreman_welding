@@ -15,6 +15,8 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*'] + ['LICENSE', 'Rakefile', 'README.md']
   s.test_files = Dir['test/**/*']
 
-  s.add_development_dependency 'rubocop'
   s.add_development_dependency 'rdoc'
+  s.add_development_dependency 'rubocop', '~> 0.71.0'
+  s.add_development_dependency 'rubocop-performance', '~> 1.4.0'
+  s.add_development_dependency 'rubocop-rails', '~> 2.0.1'
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HostSshKey < ApplicationRecord
   belongs_to_host
   belongs_to :ssh_key
@@ -10,8 +12,6 @@ class HostSshKey < ApplicationRecord
   def valid_to_date_after_valid_from_date
     return if valid_from.blank? || valid_to.blank?
 
-    if valid_to < valid_from
-      errors.add(:valid_from, _('must be after the valid from date'))
-    end
+    errors.add(:valid_to, _('must be after the valid from date')) if valid_to < valid_from
   end
 end

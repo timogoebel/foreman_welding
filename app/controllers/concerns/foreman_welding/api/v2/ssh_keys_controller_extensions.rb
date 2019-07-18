@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ForemanWelding
   module Api
     module V2
@@ -12,8 +14,8 @@ module ForemanWelding
           before_action :find_host, only: [:active_keys]
         end
 
-        api :GET, "/ssh_keys/active_keys/:username", N_("List all active SSH keys for a user")
-        param :username, String, :desc => N_("ID of the user"), :required => true
+        api :GET, '/ssh_keys/active_keys/:username', N_('List all active SSH keys for a user')
+        param :username, String, desc: N_('ID of the user'), required: true
 
         def active_keys
           @ssh_keys = @host.active_ssh_keys(username: params[:username])

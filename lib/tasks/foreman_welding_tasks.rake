@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rake/testtask'
 
 # Tests
@@ -21,7 +23,7 @@ namespace :foreman_welding do
                          "#{ForemanWelding::Engine.root}/lib/**/*.rb",
                          "#{ForemanWelding::Engine.root}/test/**/*.rb"]
       end
-    rescue
+    rescue StandardError
       puts 'Rubocop not loaded.'
     end
 
@@ -32,6 +34,4 @@ end
 Rake::Task[:test].enhance ['test:foreman_welding']
 
 load 'tasks/jenkins.rake'
-if Rake::Task.task_defined?(:'jenkins:unit')
-  Rake::Task['jenkins:unit'].enhance ['test:foreman_welding', 'foreman_welding:rubocop']
-end
+Rake::Task['jenkins:unit'].enhance ['test:foreman_welding', 'foreman_welding:rubocop'] if Rake::Task.task_defined?(:'jenkins:unit')

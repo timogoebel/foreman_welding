@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateHostSshKeys < ActiveRecord::Migration[5.2]
   def change
     create_table :host_ssh_keys do |t|
