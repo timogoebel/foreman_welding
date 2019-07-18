@@ -24,8 +24,8 @@ module ForemanWelding
         ::Host::Managed.send(:include, ::ForemanWelding::HostExtensions)
         ::SshKey.send(:include, ::ForemanWelding::SshKeyExtensions)
         ::Api::V2::SshKeysController.send(:include, ::ForemanWelding::Api::V2::SshKeysControllerExtensions)
-      rescue StandardError => e
-        Rails.logger.warn "ForemanWelding: skipping engine hook (#{e})"
+      #rescue StandardError => e
+      #  Rails.logger.warn "ForemanWelding: skipping engine hook (#{e})"
       end
     end
   end
