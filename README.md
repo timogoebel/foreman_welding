@@ -1,19 +1,10 @@
 # ForemanWelding
 
-*Introdction here*
+A Foreman plug-in that allows users to sign in to hosts with the ssh keys stored in Foreman.
 
 ## Installation
 
-See [How_to_Install_a_Plugin](http://projects.theforeman.org/projects/foreman/wiki/How_to_Install_a_Plugin)
-for how to install Foreman plugins
-
-## Usage
-
-*Usage here*
-
-## TODO
-
-*Todo list here*
+See [Plugins install instructions](https://theforeman.org/plugins/) for how to install Foreman plugins.
 
 ## Contributing
 
@@ -21,7 +12,7 @@ Fork and send a Pull Request. Thanks!
 
 ## Copyright
 
-Copyright (c) *year* *your name*
+Copyright (c) 2019 Timo Goebel
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
